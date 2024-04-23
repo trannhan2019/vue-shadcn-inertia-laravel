@@ -19,6 +19,7 @@ class UserSharedResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'roles' => $this->getRoleNames(),
+            'permissions' => $this->getAllPermissions()->pluck('name'),
         ];
     }
 }

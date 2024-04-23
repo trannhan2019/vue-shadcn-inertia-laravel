@@ -7,9 +7,16 @@ use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
 use Inertia\Inertia;
 use App\Http\Resources\CompanyResource;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
-class CompanyController extends Controller
+class CompanyController extends Controller implements HasMiddleware
 {
+    public static function middleware(): array {
+        return [
+            new Middleware("permission:company.read",only:["index","show"]),
+        ];
+    }
     /**
      * Display a listing of the resource.
      */

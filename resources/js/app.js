@@ -5,6 +5,7 @@ import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/vue3";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { ZiggyVue } from "../../vendor/tightenco/ziggy";
+import { Can } from '@/Support/can.js' 
 
 import { Link, Head } from "@inertiajs/vue3";
 import { Button } from "@/Components/ui/button";
@@ -40,6 +41,7 @@ createInertiaApp({
         return createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
+            // .use(Can)
             .component("Link", Link)
             .component("Head", Head)
             .component("Button", Button)

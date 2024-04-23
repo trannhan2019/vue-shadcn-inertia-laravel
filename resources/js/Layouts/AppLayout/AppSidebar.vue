@@ -8,11 +8,13 @@ import {
     ShoppingCart,
     Users,
 } from "lucide-vue-next";
+import { usePermission } from "@/Composables/permission";
 
 defineProps({
     sidebarOpened: Boolean,
 });
 
+const { hasPermission } = usePermission();
 // console.log(route("dashboard"));
 </script>
 
@@ -46,7 +48,7 @@ defineProps({
                         <Home class="h-4 w-4" />
                         Dashboard
                     </Link>
-                    <Link
+                    <Link v-if="hasPermission('company.read')"
                         href="/manage-company"
                         class="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                         :class="{
