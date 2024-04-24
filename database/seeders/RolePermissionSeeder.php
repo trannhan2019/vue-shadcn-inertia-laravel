@@ -13,9 +13,13 @@ class RolePermissionSeeder extends Seeder
      */
     public function run(): void
     {
+        //Reset cached roles and permissions
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+
+
         $roleAdmin = Role::where('name', 'admin')->first();
         $roleAdmin->givePermissionTo([
-            'company.create','company.read'
+            'company.create', 'company.read'
         ]);
     }
 }

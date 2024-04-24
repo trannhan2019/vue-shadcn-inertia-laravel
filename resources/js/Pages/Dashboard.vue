@@ -6,6 +6,7 @@ export default {
 
 <script setup>
 import AppLayout from "@/Layouts/AppLayout/AppLayout.vue";
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 </script>
 
