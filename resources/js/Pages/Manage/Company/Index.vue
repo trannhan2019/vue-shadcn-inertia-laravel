@@ -5,7 +5,7 @@ export default {
 </script>
 
 <script setup>
-import AppLayout from "@/Layouts/AppLayout/AppLayout.vue";
+import AppLayout from "@/Layouts/AppLayout/Index.vue";
 </script>
 
 <template>company</template>

@@ -5,7 +5,7 @@ export default {
 </script>
 
 <script setup>
-import AppLayout from "@/Layouts/AppLayout/AppLayout.vue";
+import AppLayout from "@/Layouts/AppLayout/Index.vue";
 import { Head, usePage } from "@inertiajs/vue3";
 
 defineProps(["roles", "test"]);

@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref, onUnmounted } from "vue";
-import AppSidebar from "./AppSidebar.vue";
-import AppNavbar from "./AppNavbar.vue";
+import Sidebar from "./Sidebar.vue";
+import Navbar from "./Navbar.vue";
 
 const sidebarOpened = ref(true);
 function toggleSidebar() {
@@ -24,10 +24,10 @@ onUnmounted(() => {
 
 <template>
     <div class="min-h-screen w-full flex">
-        <AppSidebar :sidebarOpened="sidebarOpened" />
+        <Sidebar :sidebarOpened="sidebarOpened" />
 
         <div class="flex flex-col flex-1">
-            <AppNavbar @toggleSidebar="toggleSidebar" />
+            <Navbar @toggleSidebar="toggleSidebar" />
             <slot />
             <main class="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
                 <div class="flex items-center">

@@ -1,4 +1,5 @@
 <script setup>
+import {h} from "vue";
 import {
     Bell,
     Home,
@@ -9,6 +10,7 @@ import {
     Users,
 } from "lucide-vue-next";
 import { usePermission } from "@/Composables/permission";
+import SidebarItem from "./SidebarItem.vue";
 
 defineProps({
     sidebarOpened: Boolean,
@@ -48,6 +50,7 @@ const { hasPermission } = usePermission();
                         <Home class="h-4 w-4" />
                         Dashboard
                     </Link>
+                    <SidebarItem href="/" url="/dashboard" :icon="h(Home, { class: 'h-4 w-4' })" />
                     <Link v-if="hasPermission('company.read')"
                         href="/manage-company"
                         class="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
